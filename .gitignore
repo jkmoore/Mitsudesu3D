@@ -1,0 +1,10 @@
+
+.DS_Store
+*.csproj
+Library/
+Logs/
+obj/
+QCAR/
+UserSettings/
+GyroTest.sln
+Mitsudesu3D.sln
