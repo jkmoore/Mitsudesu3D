@@ -14,6 +14,7 @@ public class SoundManagerScript : MonoBehaviour
 
     static AudioSource audioSrc; //Plays game sounds
 
+
     //Load audio clips into variables and set Audio Source
     void Start()
     {
@@ -28,35 +29,28 @@ public class SoundManagerScript : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
     }
 
+
     //Play the sound with the given name
     public static void PlaySound(string clip)
     {
         switch (clip)
         {
             case "Mitsudesu":
-                audioSrc.PlayOneShot(mitsudesu);
-                break;
+                audioSrc.PlayOneShot(mitsudesu); break;
             case "Sugoiyo":
-                audioSrc.PlayOneShot(sugoiyo);
-                break;
+                audioSrc.PlayOneShot(sugoiyo); break;
             case "Kinkyujitaisengen":
-                audioSrc.PlayOneShot(kinkyujitaisengen);
-                break;
+                audioSrc.PlayOneShot(kinkyujitaisengen); break;
             case "Damedesuyo":
-                audioSrc.PlayOneShot(damedesuyo);
-                break;
+                audioSrc.PlayOneShot(damedesuyo); break;
             case "Supidokan":
-                audioSrc.PlayOneShot(supidokan);
-                break;
+                audioSrc.PlayOneShot(supidokan); break;
             case "Shokuryohin":
-                audioSrc.PlayOneShot(shokuryohin);
-                break;
+                audioSrc.PlayOneShot(shokuryohin); break;
             case "Arigatogozaimasu":
-                audioSrc.PlayOneShot(arigatogozaimasu);
-                break;
+                audioSrc.PlayOneShot(arigatogozaimasu); break;
             case "Kiken":
-                audioSrc.PlayOneShot(kiken);
-                break;
+                audioSrc.PlayOneShot(kiken); break;
         }
     }
 }

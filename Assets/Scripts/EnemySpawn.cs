@@ -2,20 +2,13 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject enemy; //The game object to be spawned
+    public GameObject enemy;                //The game object to be spawned
+    public int startingDist = 30;           //Distance from player when spawned
+    public float timeBetweenWaves = 5f;     //Time between waves being spawned
+    private float countdown = 2f;           //Time until next wave
+    public int numEnemies = 3;              //Number of enemies spawned per wave
+    public Material Mat1, Mat2, Mat3, Mat4; //Non-default enemy skins
 
-    public int startingDist = 30; //Distance from the player when spawned
-
-    public float timeBetweenWaves = 5f; //Time between waves being spawned
-    private float countdown = 2f; //Time until next wave
-
-    public int numEnemies = 3; //Number of enemies spawned per wave
-
-    //Non-default skins for enemies
-    public Material Material1;
-    public Material Material2;
-    public Material Material3;
-    public Material Material4;
 
     //If time for the next wave, spawn wave and reset countdown
     //Subtract from countdown
@@ -30,6 +23,7 @@ public class EnemySpawn : MonoBehaviour
         countdown -= Time.deltaTime;
     }
 
+
     //Spawn the number of enemies to be spawned per wave, increment this number
     void SpawnWave()
     {
@@ -37,8 +31,10 @@ public class EnemySpawn : MonoBehaviour
         {
             SpawnEnemy();
         }
+
         numEnemies++;
     }
+
 
     //Spawn an enemy at a random position with a random skin
     //All enemies are startingDist away with y=0, rotated to face the player
@@ -47,19 +43,21 @@ public class EnemySpawn : MonoBehaviour
         float angle = Random.Range(0, 2 * Mathf.PI);
         float z = Mathf.Sin(angle) * startingDist;
         float x = Mathf.Cos(angle) * startingDist;
+
         Vector3 position = new Vector3(x, 0, z);
         Quaternion rotation = Quaternion.Euler(0, -1 * angle * (180 / Mathf.PI), 0);
         GameObject newEnemy = Instantiate(enemy, position, rotation);
+
         int materialNo = Random.Range(0, 5);
         if (materialNo == 0) //Keep original skin, done spawning
             return;
         else if (materialNo == 1)
-            newEnemy.GetComponent<MeshRenderer>().material = Material1;
+            newEnemy.GetComponent<MeshRenderer>().material = Mat1;
         else if (materialNo == 2)
-            newEnemy.GetComponent<MeshRenderer>().material = Material2;
+            newEnemy.GetComponent<MeshRenderer>().material = Mat2;
         else if (materialNo == 3)
-            newEnemy.GetComponent<MeshRenderer>().material = Material3;
+            newEnemy.GetComponent<MeshRenderer>().material = Mat3;
         else
-            newEnemy.GetComponent<MeshRenderer>().material = Material4;
+            newEnemy.GetComponent<MeshRenderer>().material = Mat4;
     }
 }

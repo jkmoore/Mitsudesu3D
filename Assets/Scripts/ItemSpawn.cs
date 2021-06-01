@@ -16,6 +16,7 @@ public class ItemSpawn : MonoBehaviour
     public float timeBetweenDrops = 5f; //Time between item spawns
     public float countdown = 5f;        //Time before next item spawn
 
+
     //If time for next spawn, spawn item and reset countdown
     //Subtract from countdown
     void Update()
@@ -29,6 +30,7 @@ public class ItemSpawn : MonoBehaviour
         countdown -= Time.deltaTime;
     }
 
+
     //Spawn a random item at a random position
     //All items are dist away and in the preset height range, rotated to face the player
     void SpawnItem()
@@ -39,8 +41,10 @@ public class ItemSpawn : MonoBehaviour
         float y = Random.Range(yMin, yMax);
         int yPositive = Random.Range(0, 2); //randomly make pos or neg
         if (yPositive == 0) y *= -1;
+
         Vector3 position = new Vector3(x, y, z);
         Quaternion rotation;
+
         int itemNo = Random.Range(0, 3);
         //Each image must be rotated differently to face the player
         if (itemNo == 0)

@@ -8,6 +8,7 @@ public class GyroControl : MonoBehaviour
     private GameObject cameraContainer;
     private Quaternion rot;
 
+
     //Create a container around the camera, enable the gyroscope if possible
     private void Start()
     {
@@ -17,6 +18,7 @@ public class GyroControl : MonoBehaviour
 
         gyroEnabled = EnableGyro();
     }
+
 
     //Enable the gyroscope, set rotation
     //Return false if unsupported
@@ -37,6 +39,7 @@ public class GyroControl : MonoBehaviour
 
         return false;
     }
+
 
     //Set rotation based on gyroscope
     private void Update()

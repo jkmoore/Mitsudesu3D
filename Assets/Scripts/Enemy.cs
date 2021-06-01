@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 3f;  //Enemy movement speed
-    private Transform target; //The location the enemy moves toward
-
+    public float speed = 3f;      //Enemy movement speed
+    private Transform target;     //The location the enemy moves toward
     public GameObject gameMaster; //Game master to track scores/lives/game status
+
 
     //Set target and game master on awake
     void Awake()
@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
         target = camera.transform;
         gameMaster = GameObject.Find("GameMaster");
     }
+
 
     //If the game is not over and the enemy is in the enemy zone (y=0 plane),
     //destroy and increase score on tap
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
             gameMaster.GetComponent<GameOver>().ScoreUp();
         }
     }
+
 
     //If within 2 units of the player, self-destruct and subtract a life
     //Otherwise advance the enemy toward the player
