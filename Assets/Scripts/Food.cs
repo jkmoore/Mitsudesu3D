@@ -10,7 +10,7 @@ public class Food : MonoBehaviour
         gameMaster = GameObject.Find("GameMaster");
     }
 
-    //Identify the type of item (Fish, Wagyu, Mask) tapped, update score/lives
+    //Identify the type of item (Fish, Wagyu, Mask) tapped, update scores/lives
     //in the game master accordingly, destroy the item
     void OnMouseDown()
     {
