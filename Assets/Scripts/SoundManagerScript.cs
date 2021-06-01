@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
+    //Hold a specific game audio clip
     public static AudioClip mitsudesu;
     public static AudioClip sugoiyo;
     public static AudioClip kinkyujitaisengen;
@@ -10,8 +11,10 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip shokuryohin;
     public static AudioClip arigatogozaimasu;
     public static AudioClip kiken;
-    static AudioSource audioSrc;
 
+    static AudioSource audioSrc; //Plays game sounds
+
+    //Load audio clips into variables and set Audio Source
     void Start()
     {
         mitsudesu = Resources.Load<AudioClip>("Mitsudesu");
@@ -25,6 +28,7 @@ public class SoundManagerScript : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
     }
 
+    //Play the sound with the given name
     public static void PlaySound(string clip)
     {
         switch (clip)
