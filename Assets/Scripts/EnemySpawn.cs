@@ -11,7 +11,7 @@ public class EnemySpawn : MonoBehaviour
 
     public int numEnemies = 3; //Number of enemies spawned per wave
 
-    //Skins for enemies
+    //Non-default skins for enemies
     public Material Material1;
     public Material Material2;
     public Material Material3;
@@ -51,7 +51,7 @@ public class EnemySpawn : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, -1 * angle * (180 / Mathf.PI), 0);
         GameObject newEnemy = Instantiate(enemy, position, rotation);
         int materialNo = Random.Range(0, 5);
-        if (materialNo == 0) //keep original material, done spawning
+        if (materialNo == 0) //Keep original skin, done spawning
             return;
         else if (materialNo == 1)
             newEnemy.GetComponent<MeshRenderer>().material = Material1;
