@@ -12,7 +12,6 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip kiken;
     static AudioSource audioSrc;
 
-    // Start is called before the first frame update
     void Start()
     {
         mitsudesu = Resources.Load<AudioClip>("Mitsudesu");

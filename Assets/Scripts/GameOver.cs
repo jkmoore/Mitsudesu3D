@@ -82,7 +82,6 @@ public class GameOver : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         restartButton.gameObject.SetActive(false);
@@ -91,7 +90,6 @@ public class GameOver : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         scoreText.text = score.ToString();
