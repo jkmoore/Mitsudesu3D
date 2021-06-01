@@ -455,10 +455,10 @@ MonoBehaviour:
   startingDist: 30
   timeBetweenWaves: 5
   numEnemies: 3
-  Material1: {fileID: 2100000, guid: 11ff9e092981a47d884f133e806a9a5d, type: 2}
-  Material2: {fileID: 2100000, guid: 1469ceb2582b8436ea04d744c54bd795, type: 2}
-  Material3: {fileID: 2100000, guid: 90b8ee62557f344f9b4a249ece755326, type: 2}
-  Material4: {fileID: 2100000, guid: 5c0afea48dd2c42a4b77b799f1b53211, type: 2}
+  Mat1: {fileID: 2100000, guid: 11ff9e092981a47d884f133e806a9a5d, type: 2}
+  Mat2: {fileID: 2100000, guid: 1469ceb2582b8436ea04d744c54bd795, type: 2}
+  Mat3: {fileID: 2100000, guid: 90b8ee62557f344f9b4a249ece755326, type: 2}
+  Mat4: {fileID: 2100000, guid: 5c0afea48dd2c42a4b77b799f1b53211, type: 2}
 --- !u!4 &373603991
 Transform:
   m_ObjectHideFlags: 0
