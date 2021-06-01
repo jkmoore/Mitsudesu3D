@@ -8,6 +8,7 @@ public class GyroControl : MonoBehaviour
     private GameObject cameraContainer;
     private Quaternion rot;
 
+    //Create a container around the camera, enable the gyroscope if possible
     private void Start()
     {
         cameraContainer = new GameObject("Camera Container");
@@ -17,6 +18,8 @@ public class GyroControl : MonoBehaviour
         gyroEnabled = EnableGyro();
     }
 
+    //Enable the gyroscope, set rotation
+    //Return false if unsupported
     private bool EnableGyro()
     {
         if (SystemInfo.supportsGyroscope)
@@ -24,8 +27,8 @@ public class GyroControl : MonoBehaviour
             gyro = Input.gyro;
             gyro.enabled = true;
 
-            //if x is 0, when device lies flat camera faces forward, so set to 90
-            //if y is 0, camera faces same direction as screen, so change to 180
+            //If x is 0, when device lies flat camera faces forward, so set to 90
+            //If y is 0, camera faces same direction as screen, so change to 180
             cameraContainer.transform.rotation = Quaternion.Euler(90f, 180f, 0f);
             rot = new Quaternion(0, 0, 1, 0);
 
@@ -35,6 +38,7 @@ public class GyroControl : MonoBehaviour
         return false;
     }
 
+    //Set rotation based on gyroscope
     private void Update()
     {
         if (gyroEnabled)
