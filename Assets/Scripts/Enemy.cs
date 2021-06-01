@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
     public float speed = 3f;  //Enemy movement speed
     private Transform target; //The location the enemy moves toward
 
-    public GameObject gameMaster; //Game master to track score/lives/game status
+    public GameObject gameMaster; //Game master to track scores/lives/game status
 
     //Set target and game master on awake
     void Awake()
