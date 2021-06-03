@@ -31,6 +31,7 @@ public class GameMaster : MonoBehaviour
     public void ScoreUp()
     {
         score++;
+        scoreText.text = score.ToString();
 
         if (score >= 10 && score % 10 == 0)
             SoundManagerScript.PlaySound("Sugoiyo");
@@ -45,6 +46,7 @@ public class GameMaster : MonoBehaviour
     {
         if (lives > 0)
             lives--;
+        lifeText.text = lives.ToString();
 
         if (lives > 1)
             SoundManagerScript.PlaySound("Damedesuyo");
@@ -59,6 +61,7 @@ public class GameMaster : MonoBehaviour
     public void GainLife()
     {
         lives++;
+        lifeText.text = lives.ToString();
         SoundManagerScript.PlaySound("Arigatogozaimasu");
     }
 
@@ -112,13 +115,5 @@ public class GameMaster : MonoBehaviour
         scoreText.text = score.ToString();
         lifeText.text = lives.ToString();
 
-    }
-
-
-    //Put these lines in scoreup and gainlife/loselife?
-    void Update()
-    {
-        scoreText.text = score.ToString();
-        lifeText.text = lives.ToString();
     }
 }

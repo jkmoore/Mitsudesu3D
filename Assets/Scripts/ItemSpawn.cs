@@ -36,8 +36,8 @@ public class ItemSpawn : MonoBehaviour
     void SpawnItem()
     {
         float angle = Random.Range(0, 2 * Mathf.PI);
-        float z = Mathf.Sin(angle) * 10; //change 10 to dist?
-        float x = Mathf.Cos(angle) * 10; //change 10 to dist?
+        float z = Mathf.Sin(angle) * dist;
+        float x = Mathf.Cos(angle) * dist;
         float y = Random.Range(yMin, yMax);
         int yPositive = Random.Range(0, 2); //randomly make pos or neg
         if (yPositive == 0) y *= -1;
