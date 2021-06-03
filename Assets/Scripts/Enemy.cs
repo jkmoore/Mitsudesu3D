@@ -20,10 +20,10 @@ public class Enemy : MonoBehaviour
     //destroy and increase score on tap
     void OnMouseDown()
     {
-        if (transform.position.y == 0 && !gameMaster.GetComponent<GameOver>().GameIsOver())
+        if (transform.position.y == 0 && !gameMaster.GetComponent<GameMaster>().GameIsOver())
         {
             Destroy(this.gameObject);
-            gameMaster.GetComponent<GameOver>().ScoreUp();
+            gameMaster.GetComponent<GameMaster>().ScoreUp();
         }
     }
 
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
             !(transform.position.z > 2) && !(transform.position.z < -2))
         {
             Destroy(this.gameObject);
-            gameMaster.GetComponent<GameOver>().LoseLife();
+            gameMaster.GetComponent<GameMaster>().LoseLife();
         }
         if (transform.position.y == 0)
         {

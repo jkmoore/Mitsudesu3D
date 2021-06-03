@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Food : MonoBehaviour
+public class Item : MonoBehaviour
 {
     public GameObject gameMaster; //Game master to track scores/lives/game status
 
@@ -17,15 +17,15 @@ public class Food : MonoBehaviour
     void OnMouseDown()
     {
         //Do not update scores or destroy if the game is over
-        if (gameMaster.GetComponent<GameOver>().GameIsOver())
+        if (gameMaster.GetComponent<GameMaster>().GameIsOver())
             return;
 
         if (this.gameObject.name == "Fish(Clone)")
-            gameMaster.GetComponent<GameOver>().GainFish();
+            gameMaster.GetComponent<GameMaster>().GainFish();
         else if (this.gameObject.name == "Wagyu(Clone)")
-            gameMaster.GetComponent<GameOver>().GainWagyu();
+            gameMaster.GetComponent<GameMaster>().GainWagyu();
         else
-            gameMaster.GetComponent<GameOver>().GainLife();
+            gameMaster.GetComponent<GameMaster>().GainLife();
 
         Destroy(this.gameObject);
     }

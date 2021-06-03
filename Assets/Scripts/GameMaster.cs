@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOver : MonoBehaviour
+public class GameMaster : MonoBehaviour
 {
     //Game score (number of enemies destroyed), lives remaining, fish/wagyu obtained
     private int score = 0;
